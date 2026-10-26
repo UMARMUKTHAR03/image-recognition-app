@@ -1,0 +1,263 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d18"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#060913"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.75)"/>
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.85)"/>
+    </linearGradient>
+
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#d946ef"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .title { font-weight: 800; fill: #ffffff; }
+    .subtitle { font-weight: 500; fill: #94a3b8; }
+    .card-title { font-size: 13px; font-weight: 600; fill: #94a3b8; text-transform: uppercase; letter-spacing: 0.8px; }
+    .metric-value { font-size: 26px; font-weight: 700; fill: #f8fafc; }
+    .metric-sub { font-size: 12px; font-weight: 500; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="680" fill="url(#bgGrad)"/>
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="200" cy="150" r="160" fill="#06b6d4" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="1000" cy="220" r="180" fill="#8b5cf6" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="600" cy="560" r="240" fill="#3b82f6" opacity="0.08" filter="url(#glow)"/>
+
+  <!-- Top Navigation Header -->
+  <rect x="30" y="24" width="1140" height="64" rx="14" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+  
+  <!-- Logo Icon -->
+  <rect x="50" y="40" width="32" height="32" rx="8" fill="url(#primaryGrad)"/>
+  <circle cx="66" cy="56" r="6" fill="#ffffff"/>
+  <circle cx="66" cy="56" r="10" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-dasharray="2,2"/>
+
+  <!-- App Title & Subtitle -->
+  <text x="94" y="55" class="font-sans title" font-size="19">OmniVision AI</text>
+  <text x="94" y="70" class="font-sans subtitle" font-size="11">Deep Learning Vision Studio • PyTorch ResNet-101 ImageNet Classifier</text>
+
+  <!-- Live Model Badge -->
+  <rect x="830" y="42" width="145" height="28" rx="14" fill="rgba(6, 182, 212, 0.15)" stroke="#06b6d4" stroke-width="1"/>
+  <circle cx="846" cy="56" r="4" fill="#06b6d4"/>
+  <text x="858" y="60" class="font-sans" font-size="12" font-weight="600" fill="#22d3ee">RESNET-101 (PYTORCH)</text>
+
+  <!-- Author Badge -->
+  <rect x="990" y="42" width="165" height="28" rx="14" fill="rgba(139, 92, 246, 0.2)" stroke="#8b5cf6" stroke-width="1"/>
+  <circle cx="1006" cy="56" r="4" fill="#a78bfa"/>
+  <text x="1018" y="60" class="font-sans" font-size="12" font-weight="600" fill="#ddd6fe">BY UMAR MUKTHAR</text>
+
+  <!-- 4 KPI Summary Cards -->
+  <!-- KPI 1: Backbone Architecture -->
+  <g transform="translate(30, 104)">
+    <rect width="268" height="96" rx="12" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+    <text x="20" y="32" class="font-sans card-title">Neural Backbone</text>
+    <text x="20" y="66" class="font-sans metric-value">ResNet-101</text>
+    <text x="20" y="84" class="font-sans metric-sub" fill="#22d3ee">101 Residual Layers • 44.5M Params</text>
+    <circle cx="230" cy="48" r="22" fill="rgba(6, 182, 212, 0.12)"/>
+    <path d="M 220 54 L 226 42 L 234 50 L 240 40" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- KPI 2: Top-1 & Top-5 ImageNet Accuracy -->
+  <g transform="translate(321, 104)">
+    <rect width="268" height="96" rx="12" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+    <text x="20" y="32" class="font-sans card-title">ImageNet Validation</text>
+    <text x="20" y="66" class="font-sans metric-value">94.8% <tspan font-size="18" fill="#64748b">Top-5</tspan></text>
+    <text x="20" y="84" class="font-sans metric-sub" fill="#10b981">Top-1 Accuracy: 78.2%</text>
+    <circle cx="230" cy="48" r="22" fill="rgba(16, 185, 129, 0.12)"/>
+    <path d="M 222 48 L 228 54 L 238 42" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- KPI 3: Tensor Resolution -->
+  <g transform="translate(612, 104)">
+    <rect width="268" height="96" rx="12" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+    <text x="20" y="32" class="font-sans card-title">Input Dimensions</text>
+    <text x="20" y="66" class="font-sans metric-value">224 × 224 <tspan font-size="18" fill="#64748b">× 3</tspan></text>
+    <text x="20" y="84" class="font-sans metric-sub" fill="#94a3b8">RGB Normalized (Mean/Std)</text>
+    <circle cx="230" cy="48" r="22" fill="rgba(139, 92, 246, 0.12)"/>
+    <rect x="222" y="40" width="16" height="16" rx="3" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  </g>
+
+  <!-- KPI 4: Inference Latency -->
+  <g transform="translate(902, 104)">
+    <rect width="268" height="96" rx="12" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+    <text x="20" y="32" class="font-sans card-title">Forward Pass Latency</text>
+    <text x="20" y="66" class="font-sans metric-value" fill="#38bdf8">18.4 ms</text>
+    <text x="20" y="84" class="font-sans metric-sub" fill="#38bdf8">7.8 GFLOPs Compute Budget</text>
+    <circle cx="230" cy="48" r="22" fill="rgba(56, 189, 248, 0.12)"/>
+    <path d="M 230 38 L 230 48 L 236 52" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Left Main Card: Visual Image Inspection & Heatmap Overlay -->
+  <g transform="translate(30, 218)">
+    <rect width="559" height="428" rx="14" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+    
+    <text x="24" y="36" class="font-sans" font-size="16" font-weight="700" fill="#ffffff">Computer Vision Feature Extraction</text>
+    <text x="24" y="54" class="font-sans" font-size="12" fill="#94a3b8">Active tensor stream with neural activation focus</text>
+
+    <!-- Simulated Image Viewport with Bounding Box & Target Scanner -->
+    <g transform="translate(24, 76)">
+      <!-- Viewport Base -->
+      <rect width="511" height="236" rx="12" fill="#090e1a" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+      
+      <!-- Grid Overlay (Computer Vision coordinate grid) -->
+      <line x1="0" y1="60" x2="511" y2="60" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <line x1="0" y1="120" x2="511" y2="120" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <line x1="0" y1="180" x2="511" y2="180" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <line x1="128" y1="0" x2="128" y2="236" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <line x1="256" y1="0" x2="256" y2="236" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <line x1="384" y1="0" x2="384" y2="236" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+      <!-- Subject Silhouette Graphic (Golden Retriever) -->
+      <g transform="translate(160, 30)">
+        <ellipse cx="95" cy="90" rx="75" ry="50" fill="rgba(245, 158, 11, 0.15)"/>
+        <circle cx="150" cy="65" r="32" fill="rgba(245, 158, 11, 0.25)"/>
+        <ellipse cx="140" cy="50" rx="8" ry="16" fill="rgba(245, 158, 11, 0.3)"/>
+        <ellipse cx="170" cy="52" rx="7" ry="14" fill="rgba(245, 158, 11, 0.3)"/>
+        <circle cx="160" cy="68" r="4" fill="#0f172a"/>
+      </g>
+
+      <!-- AI Bounding Box Focus -->
+      <rect x="135" y="24" width="240" height="188" rx="8" fill="none" stroke="#06b6d4" stroke-width="2" stroke-dasharray="6,4"/>
+      <!-- Corner Accents -->
+      <path d="M 135 44 L 135 24 L 155 24" fill="none" stroke="#22d3ee" stroke-width="3"/>
+      <path d="M 375 44 L 375 24 L 355 24" fill="none" stroke="#22d3ee" stroke-width="3"/>
+      <path d="M 135 192 L 135 212 L 155 212" fill="none" stroke="#22d3ee" stroke-width="3"/>
+      <path d="M 375 192 L 375 212 L 355 212" fill="none" stroke="#22d3ee" stroke-width="3"/>
+
+      <!-- Detection Tag -->
+      <rect x="135" y="8" width="168" height="22" rx="4" fill="#06b6d4"/>
+      <text x="143" y="23" class="font-sans" font-size="11" font-weight="700" fill="#080c14">GOLDEN RETRIEVER: 94.6%</text>
+
+      <!-- Feature Heatmap Intensity Points -->
+      <circle cx="295" cy="95" r="14" fill="rgba(239, 68, 68, 0.35)" filter="url(#glow)"/>
+      <circle cx="295" cy="95" r="4" fill="#ef4444"/>
+      <circle cx="230" cy="120" r="16" fill="rgba(245, 158, 11, 0.3)" filter="url(#glow)"/>
+      <circle cx="230" cy="120" r="4" fill="#f59e0b"/>
+    </g>
+
+    <!-- Bottom Preset Selector Bar -->
+    <g transform="translate(24, 326)">
+      <rect width="511" height="80" rx="10" fill="rgba(15, 23, 42, 0.6)" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+      <text x="16" y="24" class="font-sans" font-size="11" font-weight="600" fill="#94a3b8">QUICK TEST PRESETS (1,000 IMAGENET CATEGORIES)</text>
+      
+      <!-- Preset 1 (Active) -->
+      <rect x="16" y="34" width="112" height="34" rx="8" fill="rgba(6, 182, 212, 0.2)" stroke="#06b6d4" stroke-width="1"/>
+      <text x="26" y="55" class="font-sans" font-size="11" font-weight="600" fill="#22d3ee">🐕 Retriever (Dog)</text>
+
+      <!-- Preset 2 -->
+      <rect x="138" y="34" width="112" height="34" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+      <text x="148" y="55" class="font-sans" font-size="11" font-weight="500" fill="#cbd5e1">🏎️ Sports Car</text>
+
+      <!-- Preset 3 -->
+      <rect x="260" y="34" width="112" height="34" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+      <text x="270" y="55" class="font-sans" font-size="11" font-weight="500" fill="#cbd5e1">🎸 Elec Guitar</text>
+
+      <!-- Preset 4 -->
+      <rect x="382" y="34" width="112" height="34" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+      <text x="392" y="55" class="font-sans" font-size="11" font-weight="500" fill="#cbd5e1">🦜 Macaw Parrot</text>
+    </g>
+  </g>
+
+  <!-- Right Main Card: Top-5 ImageNet Classification Results -->
+  <g transform="translate(611, 218)">
+    <rect width="559" height="428" rx="14" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+    
+    <text x="24" y="36" class="font-sans" font-size="16" font-weight="700" fill="#ffffff">Top-5 ImageNet Predictions &amp; Probabilities</text>
+    <text x="24" y="54" class="font-sans" font-size="12" fill="#94a3b8">Softmax confidence distribution across 1,000 target classes</text>
+
+    <!-- Class 1: Golden Retriever (94.6%) -->
+    <g transform="translate(24, 76)">
+      <text x="0" y="16" class="font-sans" font-size="13" font-weight="700" fill="#22d3ee">1. Golden Retriever (Index #207)</text>
+      <text x="460" y="16" class="font-sans" font-size="13" font-weight="800" fill="#22d3ee">94.62%</text>
+      <rect x="0" y="24" width="511" height="10" rx="5" fill="rgba(255, 255, 255, 0.06)"/>
+      <rect x="0" y="24" width="483" height="10" rx="5" fill="url(#primaryGrad)"/>
+    </g>
+
+    <!-- Class 2: Labrador Retriever (3.8%) -->
+    <g transform="translate(24, 130)">
+      <text x="0" y="16" class="font-sans" font-size="13" font-weight="600" fill="#e2e8f0">2. Labrador Retriever (Index #208)</text>
+      <text x="460" y="16" class="font-sans" font-size="13" font-weight="700" fill="#94a3b8">3.81%</text>
+      <rect x="0" y="24" width="511" height="8" rx="4" fill="rgba(255, 255, 255, 0.06)"/>
+      <rect x="0" y="24" width="90" height="8" rx="4" fill="url(#purpleGrad)"/>
+    </g>
+
+    <!-- Class 3: Cocker Spaniel (0.8%) -->
+    <g transform="translate(24, 180)">
+      <text x="0" y="16" class="font-sans" font-size="13" font-weight="600" fill="#e2e8f0">3. Cocker Spaniel (Index #214)</text>
+      <text x="460" y="16" class="font-sans" font-size="13" font-weight="700" fill="#94a3b8">0.84%</text>
+      <rect x="0" y="24" width="511" height="8" rx="4" fill="rgba(255, 255, 255, 0.06)"/>
+      <rect x="0" y="24" width="35" height="8" rx="4" fill="url(#purpleGrad)"/>
+    </g>
+
+    <!-- Class 4: Tennis Ball (0.4%) -->
+    <g transform="translate(24, 230)">
+      <text x="0" y="16" class="font-sans" font-size="13" font-weight="600" fill="#e2e8f0">4. Tennis Ball (Index #852)</text>
+      <text x="460" y="16" class="font-sans" font-size="13" font-weight="700" fill="#94a3b8">0.42%</text>
+      <rect x="0" y="24" width="511" height="8" rx="4" fill="rgba(255, 255, 255, 0.06)"/>
+      <rect x="0" y="24" width="22" height="8" rx="4" fill="url(#purpleGrad)"/>
+    </g>
+
+    <!-- Class 5: Kuvasz (0.2%) -->
+    <g transform="translate(24, 280)">
+      <text x="0" y="16" class="font-sans" font-size="13" font-weight="600" fill="#e2e8f0">5. Kuvasz (Index #222)</text>
+      <text x="460" y="16" class="font-sans" font-size="13" font-weight="700" fill="#94a3b8">0.19%</text>
+      <rect x="0" y="24" width="511" height="8" rx="4" fill="rgba(255, 255, 255, 0.06)"/>
+      <rect x="0" y="24" width="16" height="8" rx="4" fill="url(#purpleGrad)"/>
+    </g>
+
+    <!-- Bottom Model Diagnostics Box -->
+    <g transform="translate(24, 334)">
+      <rect width="511" height="74" rx="10" fill="rgba(15, 23, 42, 0.6)" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+      <text x="18" y="24" class="font-sans" font-size="11" font-weight="600" fill="#94a3b8">PYTORCH CONVNET PIPELINE TELEMETRY</text>
+      
+      <!-- Metrics Row -->
+      <g transform="translate(18, 36)">
+        <rect x="0" y="0" width="112" height="26" rx="6" fill="rgba(6, 182, 212, 0.15)"/>
+        <text x="8" y="17" class="font-sans" font-size="11" fill="#22d3ee">Transforms: 224c</text>
+
+        <rect x="122" y="0" width="112" height="26" rx="6" fill="rgba(16, 185, 129, 0.15)"/>
+        <text x="8" y="17" class="font-sans" font-size="11" fill="#34d399" transform="translate(122, 0)">Norm: μ=0.485</text>
+
+        <rect x="244" y="0" width="112" height="26" rx="6" fill="rgba(139, 92, 246, 0.15)"/>
+        <text x="8" y="17" class="font-sans" font-size="11" fill="#c4b5fd" transform="translate(244, 0)">Softmax: 1000 Dim</text>
+
+        <rect x="366" y="0" width="112" height="26" rx="6" fill="rgba(245, 158, 11, 0.15)"/>
+        <text x="8" y="17" class="font-sans" font-size="11" fill="#fbbf24" transform="translate(366, 0)">Precision: FP32</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Watermark Footer -->
+  <text x="600" y="664" text-anchor="middle" class="font-sans" font-size="12" font-weight="500" fill="#64748b">OmniVision AI • Designed, Engineered &amp; Deployed by UMAR MUKTHAR • All Rights Reserved</text>
+</svg>
