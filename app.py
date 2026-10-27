@@ -3,7 +3,7 @@ from PIL import Image
 from clf import predict
 
 st.set_page_config(
-    page_title="OmniVision AI • Deep Learning Vision Studio",
+    page_title="Image Recognition App • Deep Learning Vision Studio",
     page_icon="👁️",
     layout="wide"
 )
@@ -34,7 +34,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="main-header">👁️ OmniVision AI — Deep Learning Vision Studio</p>', unsafe_allow_html=True)
+st.markdown('<p class="main-header">👁️ Image Recognition App — Deep Learning Vision Studio</p>', unsafe_allow_html=True)
 st.markdown('<p class="sub-header">Engineered by <b>Umar Mukthar</b> • Pre-trained PyTorch ResNet-101 (ImageNet 1,000 Categories)</p>', unsafe_allow_html=True)
 st.markdown("---")
 
@@ -80,7 +80,7 @@ with col2:
 st.markdown("---")
 st.markdown(
     "<div style='text-align: center; color: #64748b; font-size: 0.85rem;'>"
-    "OmniVision AI • Designed & Engineered by <b>Umar Mukthar</b> • "
+    "Image Recognition App • Designed & Engineered by <b>Umar Mukthar</b> • "
     "<a href='https://github.com/UMARMUKTHAR03/image-recognition-app' target='_blank'>GitHub Repository</a> • MIT License"
     "</div>",
     unsafe_allow_html=True
