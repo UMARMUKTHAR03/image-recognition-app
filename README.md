@@ -1,8 +1,8 @@
-# 👁️ OmniVision AI: Deep Learning Vision Studio & Classifier
+# 👁️ Image Recognition App
 
 <div align="center">
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-OmniVision_AI_Web_Platform-06B6D4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://umarmukthar03.github.io/image-recognition-app/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Image_Recognition_App-06B6D4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://umarmukthar03.github.io/image-recognition-app/)
 [![PyTorch](https://img.shields.io/badge/Framework-PyTorch_1.6+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Backbone](https://img.shields.io/badge/Backbone-ResNet--101-8B5CF6?style=for-the-badge)](https://umarmukthar03.github.io/image-recognition-app/)
 [![Accuracy](https://img.shields.io/badge/Top--5_Accuracy-94.8%25-10B981?style=for-the-badge)](https://umarmukthar03.github.io/image-recognition-app/)
@@ -12,7 +12,7 @@
 <br/>
 
 <a href="https://umarmukthar03.github.io/image-recognition-app/">
-  <img src="./docs/preview.svg" alt="OmniVision AI Deep Learning Vision Studio Preview" width="100%" />
+  <img src="./docs/preview.svg" alt="Image Recognition App Deep Learning Vision Studio Preview" width="100%" />
 </a>
 
 <br/>
@@ -25,7 +25,7 @@
 
 ## 🎯 Executive Overview
 
-**OmniVision AI** is an enterprise-grade Computer Vision and Deep Learning classification studio engineered by **UMAR MUKTHAR**. Powered by a pre-trained **ResNet-101 (Deep Residual Convolutional Neural Network)**, the platform executes high-speed visual inference across 1,000 ImageNet categories with **94.8% Top-5 accuracy**.
+**Image Recognition App** is an enterprise-grade Computer Vision and Deep Learning classification studio engineered by **UMAR MUKTHAR**. Powered by a pre-trained **ResNet-101 (Deep Residual Convolutional Neural Network)**, the platform executes high-speed visual inference across 1,000 ImageNet categories with **94.8% Top-5 accuracy**.
 
 ### 💎 Key Engineering Capabilities
 - **Deep Residual Backbone**: 101 convolutional layers leveraging identity shortcut connections to solve vanishing gradients in ultra-deep networks.
