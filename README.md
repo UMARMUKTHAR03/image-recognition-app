@@ -12,7 +12,7 @@
 > **Tagline:** See. Recognize. Understand.  
 > **Author & Engineer:** Umar Mukthar  
 > **Production Frontend:** [https://umarmukthar03.github.io/image-recognition-app/](https://umarmukthar03.github.io/image-recognition-app/)  
-> **Production API & Swagger Docs:** [https://image-recognition-api-bgzb.onrender.com/docs](https://image-recognition-api-bgzb.onrender.com/docs)  
+> **Production API & Swagger Docs:** [https://image-recognition-api-jq01.onrender.com/docs](https://image-recognition-api-jq01.onrender.com/docs)  
 > **GitHub Repository:** [https://github.com/UMARMUKTHAR03/image-recognition-app](https://github.com/UMARMUKTHAR03/image-recognition-app)
 
 ---

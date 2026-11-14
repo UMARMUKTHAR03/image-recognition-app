@@ -63,7 +63,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onBackendStatusChang
               type="text"
               value={apiUrl}
               onChange={(e) => setApiUrl(e.target.value)}
-              placeholder="https://image-recognition-api-bgzb.onrender.com"
+              placeholder="https://image-recognition-api-jq01.onrender.com"
               className="flex-1 rounded-xl border border-slate-800 bg-slate-950 px-4 py-2.5 text-xs font-mono text-slate-200 placeholder-slate-600 focus:border-cyan-500 focus:outline-none"
             />
             <button
@@ -76,7 +76,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onBackendStatusChang
             </button>
           </div>
           <p className="mt-1.5 text-[11px] text-slate-500">
-            Default Render production URL: <code className="text-cyan-400">https://image-recognition-api-bgzb.onrender.com</code> or local development <code className="text-cyan-400">http://localhost:8000</code>
+            Default Render production URL: <code className="text-cyan-400">https://image-recognition-api-jq01.onrender.com</code> or local development <code className="text-cyan-400">http://localhost:8000</code>
           </p>
         </div>
 

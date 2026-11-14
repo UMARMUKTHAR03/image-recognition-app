@@ -70,7 +70,7 @@ jobs:
         working-directory: frontend
         run: npm run build
         env:
-          VITE_API_URL: "https://image-recognition-api-bgzb.onrender.com"
+          VITE_API_URL: "https://image-recognition-api-jq01.onrender.com"
 
       - name: Sync Root Files for GitHub Pages
         run: |

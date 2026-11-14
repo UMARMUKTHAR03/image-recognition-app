@@ -10,13 +10,20 @@ import {
 export const DEFAULT_API_URL =
   import.meta.env.VITE_API_URL ||
   (window.location.hostname.includes('github.io')
-    ? 'https://image-recognition-api-bgzb.onrender.com'
+    ? 'https://image-recognition-api-jq01.onrender.com'
     : 'http://localhost:8000');
 
 export function getApiBaseUrl(): string {
   const custom = localStorage.getItem('image_recognition_api_url');
   if (custom && custom.trim().length > 0) {
-    return custom.trim().replace(/\/$/, '');
+    const cleaned = custom.trim().replace(/\/$/, '');
+    // Automatically migrate users from legacy/temporary render hostnames
+    if (cleaned.includes('image-recognition-api-bgzb.onrender.com')) {
+      const migrated = 'https://image-recognition-api-jq01.onrender.com';
+      localStorage.setItem('image_recognition_api_url', migrated);
+      return migrated;
+    }
+    return cleaned;
   }
   return DEFAULT_API_URL.replace(/\/$/, '');
 }
