@@ -72,17 +72,18 @@ jobs:
         env:
           VITE_API_URL: "https://image-recognition-api-bgzb.onrender.com"
 
-      - name: Setup Pages
-        if: github.ref == 'refs/heads/main'
-        uses: actions/configure-pages@v5
+      - name: Sync Root Files for GitHub Pages
+        run: |
+          mkdir -p assets
+          cp -r frontend/dist/assets/* assets/ || true
+          cp frontend/dist/index.html index.html
+          cp frontend/dist/index.html 404.html
 
-      - name: Upload Artifact
+      - name: Deploy to gh-pages Branch
         if: github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: "frontend/dist"
-
-      - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/dist
+          keep_files: false
+          force_orphan: false
