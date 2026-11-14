@@ -1,149 +1,193 @@
-# 👁️ Image Recognition App
+# Image Recognition App – Deep Learning Computer Vision Platform
 
-<div align="center">
+[![CI/CD Pipeline](https://github.com/UMARMUKTHAR03/image-recognition-app/actions/workflows/ci.yml/badge.svg)](https://github.com/UMARMUKTHAR03/image-recognition-app/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.x%20CPU-EE4C2C.svg?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React 19](https://img.shields.io/badge/React-19-61DAFB.svg?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.x-646CFF.svg?logo=vite&logoColor=white)](https://vitejs.dev/)
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Image_Recognition_App-06B6D4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://umarmukthar03.github.io/image-recognition-app/)
-[![PyTorch](https://img.shields.io/badge/Framework-PyTorch_1.6+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![Backbone](https://img.shields.io/badge/Backbone-ResNet--101-8B5CF6?style=for-the-badge)](https://umarmukthar03.github.io/image-recognition-app/)
-[![Accuracy](https://img.shields.io/badge/Top--5_Accuracy-94.8%25-10B981?style=for-the-badge)](https://umarmukthar03.github.io/image-recognition-app/)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
-[![Author](https://img.shields.io/badge/Engineered_By-Umar_Mukthar-rose?style=for-the-badge&logo=github)](https://github.com/UMARMUKTHAR03)
-
-<br/>
-
-<a href="https://umarmukthar03.github.io/image-recognition-app/">
-  <img src="./docs/preview.svg" alt="Image Recognition App Deep Learning Vision Studio Preview" width="100%" />
-</a>
-
-<br/>
-
-**[🚀 Launch Interactive Web Platform](https://umarmukthar03.github.io/image-recognition-app/)** • **[Explore ConvNet Architecture](#-deep-convnet-architecture)** • **[Quickstart](#-quick-start)** • **[Model Benchmarks](#-model-benchmarks)**
-
-</div>
+> **Tagline:** See. Recognize. Understand.  
+> **Author & Engineer:** Umar Mukthar  
+> **Production Frontend:** [https://umarmukthar03.github.io/image-recognition-app/](https://umarmukthar03.github.io/image-recognition-app/)  
+> **Production API & Swagger Docs:** [https://image-recognition-api-bgzb.onrender.com/docs](https://image-recognition-api-bgzb.onrender.com/docs)  
+> **GitHub Repository:** [https://github.com/UMARMUKTHAR03/image-recognition-app](https://github.com/UMARMUKTHAR03/image-recognition-app)
 
 ---
 
-## 🎯 Executive Overview
+## 1. Executive Summary & Problem Statement
 
-**Image Recognition App** is an enterprise-grade Computer Vision and Deep Learning classification studio engineered by **UMAR MUKTHAR**. Powered by a pre-trained **ResNet-101 (Deep Residual Convolutional Neural Network)**, the platform executes high-speed visual inference across 1,000 ImageNet categories with **94.8% Top-5 accuracy**.
+Modern computer vision systems often suffer from two major production pitfalls: **high computational latency** on commodity hardware, and the **black-box problem**, where neural network predictions lack visual explanation.
 
-### 💎 Key Engineering Capabilities
-- **Deep Residual Backbone**: 101 convolutional layers leveraging identity shortcut connections to solve vanishing gradients in ultra-deep networks.
-- **Top-5 Softmax Probability Scoring**: Real-time multi-class confidence calibration ranking target predictions with associated ImageNet class IDs.
-- **Interactive Vision Studio**: Web-based visual inspection tool with real-time bounding box crosshairs, feature point radar scanning, and instant preset feeds.
-- **ImageNet Tensor Preprocessing**: Standardized resolution scaling to $224 \times 224 \times 3$ with channel normalization:
-  $$\mu = [0.485, 0.456, 0.406], \quad \sigma = [0.229, 0.224, 0.225]$$
-
----
-
-## 🌐 Live Web Platform & UI Features
-
-Explore the live interactive computer vision platform in your browser:  
-👉 **[https://umarmukthar03.github.io/image-recognition-app/](https://umarmukthar03.github.io/image-recognition-app/)**
-
-- **👁️ Live Image Classifier**: Upload custom images or test rich curated presets (Golden Retriever, Supercar, Electric Guitar, Scarlet Macaw, Espresso, Airliner).
-- **🎯 Bounding Box & Target Radar**: Toggle AI object detection bounding boxes, target coordinates, and live scanning animations.
-- **📊 Top-5 Prediction Analytics**: Interactive confidence progress meters with class index mappings and diagnostic insights.
-- **🧠 5-Stage ConvNet Explorer**: Step-through visualizer illustrating how spatial resolution collapses from $224 \times 224$ into 2,048 feature vectors and 1,000 Softmax outputs.
-- **📚 ImageNet 1K Taxonomy**: Filterable, searchable dictionary of supported ImageNet classes.
+**Image Recognition App** is an end-to-end deep learning computer vision platform engineered to deliver:
+1. **Real-time, CPU-optimized image classification** across the full ImageNet-1K taxonomy (1,000 distinct object categories) with zero fabricated confidences or simulated latency.
+2. **Transparent Explainable AI (XAI)** through genuine **Grad-CAM (Gradient-weighted Class Activation Mapping)** computed on the final convolutional feature extraction layer.
+3. **High-throughput batch processing** supporting concurrent multi-image evaluation with CSV telemetry export.
+4. **Reproducible transfer learning training pipeline** for fine-tuning custom classification heads with early stopping, confusion matrices, and validation reports.
 
 ---
 
-## 🏗️ Technical Architecture
+## 2. Core Architectural Pillars
 
-```mermaid
-graph TD
-    subgraph "Image Ingestion & Pre-processing"
-        A["Input Image (RGB)"] --> B["Resize (256x256) & CenterCrop (224x224)"]
-        B --> C["Tensor Normalization (Mean/Std)"]
-    end
-
-    subgraph "ResNet-101 Deep Convolutional Backbone"
-        C --> D["Stage 1: 7x7 Conv + MaxPool (64 Channels)"]
-        D --> E["Stage 2: 3 Residual Blocks (256 Channels)"]
-        E --> F["Stage 3: 4 Residual Blocks (512 Channels)"]
-        F --> G["Stage 4: 23 Residual Blocks (1024 Channels)"]
-        G --> H["Stage 5: 3 Residual Blocks (2048 Channels)"]
-    end
-
-    subgraph "Inference & Classification Head"
-        H --> I["Global Average Pooling (GAP)"]
-        I --> J["Fully Connected Linear Layer (1000 Dim)"]
-        J --> K["Softmax Probability Distribution"]
-    end
-
-    subgraph "Presentation Layer"
-        K --> L["Interactive Web Platform (GitHub Pages)"]
-        K --> M["Streamlit Local Studio"]
-    end
-
-    style D fill:#06B6D4,stroke:#0891B2,stroke-width:2px,color:#fff
-    style G fill:#8B5CF6,stroke:#7C3AED,stroke-width:2px,color:#fff
-    style L fill:#10B981,stroke:#059669,stroke-width:2px,color:#fff
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        React 19 + Vite Frontend                        │
+│   (Studio • Batch • Grad-CAM XAI • Dashboard • History • Taxonomy)     │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ HTTP / Multipart Form-Data
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                        FastAPI REST API Gateway                        │
+│   (/health • /api/v1/predict • /api/v1/predict/batch • /api/v1/explain)│
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│              PyTorch Deep Learning Engine (MobileNetV3-Small)          │
+│   ├── Torchvision Pretrained Weights: MobileNet_V3_Small_Weights.DEFAULT│
+│   ├── Input Transform: 256 Resize → 224 Center Crop → RGB Norm        │
+│   ├── Softmax Top-K Probabilities Calculation                          │
+│   └── Grad-CAM Hook: features.12 Conv2d Layer Backpropagation         │
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
----
-
-## 🚀 Model Benchmarks
-
-| Metric | ResNet-101 Score | Description |
-| :--- | :---: | :--- |
-| **Top-1 Accuracy** | **78.2%** | Exact class match on ImageNet holdout validation. |
-| **Top-5 Accuracy** | **94.8%** | Target category included in top-5 Softmax predictions. |
-| **Parameters** | **44.5 Million** | Total trainable model weights across 101 layers. |
-| **Compute FLOPs** | **7.8 GFLOPs** | Floating-point operations per single forward inference. |
-| **Input Dimensions** | **$224 \times 224 \times 3$** | 3-channel RGB normalized floating-point tensor. |
-| **Inference Latency** | **~18.4 ms** | Single-image forward pass on standard GPU accelerator. |
+### Why MobileNetV3-Small?
+- **Efficiency:** Utilizes depthwise separable convolutions and Squeeze-and-Excitation (SE) blocks with Hardswish activations, reducing parameter count to ~2.5M.
+- **Low Memory Footprint:** Executes in **<100 ms** on standard cloud CPU instances without GPU acceleration.
+- **Resource Compatibility:** Perfectly optimized for Render Free-tier memory constraints while retaining high top-1 ImageNet accuracy.
 
 ---
 
-## 📂 Project Structure
+## 3. Key Capabilities
 
-```text
-image-recognition-app/
-├── docs/
-│   └── preview.svg           # High-resolution vector preview graphic
-├── index.html                # Interactive single-page web application (GitHub Pages)
-├── 404.html                  # Single-page fallback router
-├── .nojekyll                 # GitHub Pages static asset bypass
-├── app.py                    # Local Streamlit interactive dashboard
-├── clf.py                    # PyTorch ResNet-101 inference engine & transforms
-├── imagenet_classes.txt      # 1,000 ImageNet category class labels
-├── requirements.txt          # Python dependencies
-├── LICENSE                   # MIT License
-└── README.md                 # Project documentation
-```
+### A. Real-Time Vision Studio
+- Drag-and-drop file upload, file browsing, and live browser camera snapshot ingestion.
+- Supports JPEG, PNG, and WEBP formats with a strict 10 MB file validation filter.
+- Calculates genuine Softmax confidence distributions and top-k rankings.
+- Automatically flags low-confidence predictions (<15%) when subjects fall outside ImageNet categories.
+
+### B. Explainable AI (Grad-CAM)
+- Extracts feature activations and backward gradients from `model.features[-1]`.
+- Computes global average pooling weights to construct a 2D saliency heatmap.
+- Generates alpha-blended Jet colormap overlays directly highlighting the visual regions that informed the classification decision.
+
+### C. Concurrent Batch Recognition
+- Accepts up to 8 images per request with per-file validation and error isolation.
+- Displays structured batch summaries with individual confidence scores and latency metrics.
+- One-click CSV export for downstream data science inspection.
+
+### D. ImageNet-1K Taxonomy Explorer
+- Real-time client search across all 1,000 ImageNet categories and class IDs.
+
+### E. Reproducible Transfer Learning Pipeline
+- Standard `ImageFolder` dataset loader (`dataset/train/`, `dataset/val/`).
+- MobileNetV3 feature backbone freezing with custom classifier head replacement.
+- AdamW optimizer with StepLR learning rate scheduling.
+- Generation of training curves, confusion matrices, and classification metrics.
 
 ---
 
-## 📦 Quick Start
+## 4. API Specification & Endpoints
 
-### 1. Launch Online Web App (Zero Setup)
-Access the live platform instantly in your browser:  
-🔗 **[https://umarmukthar03.github.io/image-recognition-app/](https://umarmukthar03.github.io/image-recognition-app/)**
+| Method | Endpoint | Description |
+| :---: | :--- | :--- |
+| `GET` | `/health` | Server heartbeat, application status, active model, and class count. |
+| `GET` | `/api/v1/model-info` | Architecture specifications, input dimensions, and custom training metrics. |
+| `GET` | `/api/v1/classes` | Complete ImageNet-1K taxonomy mapping (class IDs and labels). |
+| `POST` | `/api/v1/predict` | Multipart image upload returning top-5 softmax predictions and latency. |
+| `POST` | `/api/v1/predict/batch` | Concurrently classifies up to 8 images with CSV-ready metadata. |
+| `POST` | `/api/v1/explain` | Computes Grad-CAM heatmap and overlay base64 visualizations. |
 
-### 2. Run Locally with Streamlit & PyTorch
+Interactive API documentation is available via Swagger UI at `/docs`.
 
+---
+
+## 5. Local Installation & Development
+
+### Prerequisites
+- Python 3.11+
+- Node.js 20+ & npm
+
+### Backend Setup
 ```bash
 # Clone the repository
 git clone https://github.com/UMARMUKTHAR03/image-recognition-app.git
 cd image-recognition-app
 
-# Install dependencies
-pip install -r requirements.txt
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Run Streamlit Vision Studio
-streamlit run app.py
+# Install CPU-optimized PyTorch and dependencies
+pip install --upgrade pip
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+
+# Run backend API server
+python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+### Frontend Setup
+```bash
+cd frontend
+
+# Install dependencies
+npm ci
+
+# Start Vite development server
+npm run dev
+```
+Open [http://localhost:5173/image-recognition-app/](http://localhost:5173/image-recognition-app/) in your browser.
+
+---
+
+## 6. Testing & Quality Assurance
+
+### Run Backend PyTest Suite
+```bash
+pytest backend/tests/test_api.py -v
+```
+Verified tests:
+- `test_health_endpoint`
+- `test_model_info_endpoint`
+- `test_classes_endpoint`
+- `test_predict_single_valid_image`
+- `test_predict_invalid_extension`
+- `test_predict_corrupted_image`
+- `test_predict_empty_file`
+- `test_predict_batch_images`
+- `test_predict_batch_limit_exceeded`
+- `test_explain_grad_cam`
+
+### Run Frontend Vitest Suite & Build
+```bash
+cd frontend
+npm test -- --run
+npm run build
 ```
 
 ---
 
-## 👨‍💻 Author & Engineering Credits
+## 7. Production Deployment
 
-**UMAR MUKTHAR**  
-- GitHub: [@UMARMUKTHAR03](https://github.com/UMARMUKTHAR03)  
-- Email: [umarom98425@gmail.com](mailto:umarom98425@gmail.com)  
+### Frontend (GitHub Pages)
+The GitHub Actions workflow at `.github/workflows/ci.yml` runs automatically on pushes to `main`:
+1. Executes backend PyTest test suite.
+2. Installs frontend dependencies and runs Vitest unit tests.
+3. Validates TypeScript types (`tsc -b`).
+4. Builds the production bundle with base path `/image-recognition-app/`.
+5. Deploys artifacts directly to GitHub Pages.
 
-## 📄 License
+### Backend (Render Blueprint)
+The repository contains a production-ready `render.yaml` Blueprint:
+1. Log in to [Render Dashboard](https://dashboard.render.com/).
+2. Click **New +** → **Blueprint**.
+3. Connect your repository: `https://github.com/UMARMUKTHAR03/image-recognition-app`.
+4. Render detects `render.yaml` and deploys the `image-recognition-api` service automatically with CPU PyTorch on Python 3.11.
 
-Distributed under the **MIT License**. See `LICENSE` for details.
+---
+
+## 8. License
+
+This project is licensed under the [MIT License](LICENSE).
